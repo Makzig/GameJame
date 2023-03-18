@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt7redgrs7osn"]
+
+[ext_resource type="Script" path="res://Scenes/Player/Camera/PlayerCamera.gd" id="1_i3qi6"]
+
+[node name="PlayerCamera" type="Camera2D"]
+zoom = Vector2(5, 5)
+limit_smoothed = true
+script = ExtResource("1_i3qi6")
+
+[node name="Timer" type="Timer" parent="."]

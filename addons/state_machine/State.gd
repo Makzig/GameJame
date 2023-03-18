@@ -12,7 +12,7 @@ func update(_delta:float) -> void:
 func physics_update(_delta:float) -> void:
 	pass
 
-func handless_ipnut(_event:InputEvent) -> void:
+func handless_input(_event:InputEvent) -> void:
 	pass
 
 func exit_state() -> void:

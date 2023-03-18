@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0fwe6ahbluno"]
+
+[ext_resource type="Script" path="res://addons/state_machine/StateMachine.gd" id="1_h0dfx"]
+[ext_resource type="Script" path="res://Scenes/Player/Walk.gd" id="2_b815c"]
+[ext_resource type="Script" path="res://addons/state_machine/State.gd" id="2_t1whf"]
+[ext_resource type="Texture2D" uid="uid://dx5ge55k38upj" path="res://icon.svg" id="4_5qan2"]
+[ext_resource type="Script" path="res://addons/hurtbox_and_hitbox/HurtBox/HurtBox2D.gd" id="5_jxftf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1ufyk"]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1ufyk")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_h0dfx")
+inition_state = NodePath("Walk")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("2_b815c")
+
+[node name="PickAndTrow" type="Node" parent="StateMachine"]
+script = ExtResource("2_t1whf")
+
+[node name="Dead" type="Node" parent="StateMachine"]
+script = ExtResource("2_t1whf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("4_5qan2")
+
+[node name="HurtBox2D" type="Area2D" parent="."]
+script = ExtResource("5_jxftf")
+max_health = 1.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HurtBox2D"]
+shape = SubResource("CircleShape2D_1ufyk")
