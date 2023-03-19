@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck2r5na1w5jir"]
+
+[ext_resource type="Script" path="res://Scenes/Barriers/FloorButton/FloorButton.gd" id="1_g87ob"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5yacq"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Pressed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jp1ij"]
+
+[node name="FloorButton" type="Area2D"]
+script = ExtResource("1_g87ob")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5yacq")
+animation = &"Pressed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jp1ij")
