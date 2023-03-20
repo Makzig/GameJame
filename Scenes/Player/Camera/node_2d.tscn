@@ -29,3 +29,10 @@ position = Vector2(102, 95)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(102, 129)
 shape = SubResource("RectangleShape2D_qtrn8")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." groups=["PlayableObject"]]
+position = Vector2(153, -44)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(102, 129)
+shape = SubResource("RectangleShape2D_qtrn8")

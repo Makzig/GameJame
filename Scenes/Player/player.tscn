@@ -1,10 +1,11 @@
-[gd_scene load_steps=38 format=3 uid="uid://b0fwe6ahbluno"]
+[gd_scene load_steps=40 format=3 uid="uid://b0fwe6ahbluno"]
 
 [ext_resource type="Script" path="res://addons/state_machine/StateMachine.gd" id="1_h0dfx"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_pi762"]
 [ext_resource type="Script" path="res://Scenes/Player/Walk.gd" id="2_b815c"]
-[ext_resource type="Script" path="res://addons/state_machine/State.gd" id="2_t1whf"]
+[ext_resource type="Script" path="res://Scenes/Player/PickAndTrow.gd" id="4_16igw"]
 [ext_resource type="Texture2D" uid="uid://dscqdotq4wua0" path="res://Sprites/sprites/player_1_idle_1.png" id="4_c25et"]
+[ext_resource type="Script" path="res://Scenes/Player/Dead.gd" id="5_7inow"]
 [ext_resource type="Texture2D" uid="uid://cwls4vvx30foe" path="res://Sprites/sprites/player_1_idle_2.png" id="5_22fhd"]
 [ext_resource type="Script" path="res://addons/hurtbox_and_hitbox/HurtBox/HurtBox2D.gd" id="5_jxftf"]
 [ext_resource type="Texture2D" uid="uid://bhqw2kys8d5jm" path="res://Sprites/sprites/player_2_idle_1.png" id="6_ljbpo"]
@@ -270,6 +271,8 @@ states/Walk/position = Vector2(616, 61)
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_gdjrl"]
 
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_2kb2c"]
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_pi762")
 
@@ -284,16 +287,15 @@ inition_state = NodePath("Walk")
 script = ExtResource("2_b815c")
 
 [node name="PickAndTrow" type="Node" parent="StateMachine"]
-script = ExtResource("2_t1whf")
+script = ExtResource("4_16igw")
 
 [node name="Dead" type="Node" parent="StateMachine"]
-script = ExtResource("2_t1whf")
+script = ExtResource("5_7inow")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_mxsca")
 animation = &"Idle"
-frame = 1
 
 [node name="HurtBox2D" type="Area2D" parent="."]
 script = ExtResource("5_jxftf")
@@ -314,3 +316,8 @@ active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_gdjrl")
 parameters/Idle/blend_position = Vector2(-0.0192, 0.202128)
 parameters/Walk/blend_position = Vector2(0.08, 0.344978)
+
+[node name="DetectRay" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectRay"]
+shape = SubResource("SeparationRayShape2D_2kb2c")
