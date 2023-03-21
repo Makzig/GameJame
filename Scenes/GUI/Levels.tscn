@@ -48,6 +48,7 @@ grow_vertical = 2
 script = ExtResource("1_7ho1n")
 
 [node name="background" type="ColorRect" parent="."]
+z_index = -999
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -64,3 +65,91 @@ speed_scale = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_vsogv")
 }
+
+[node name="list" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 64.0
+offset_top = 192.0
+offset_right = 1088.0
+offset_bottom = 432.0
+
+[node name="background" type="ColorRect" parent="list"]
+z_index = -999
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 462.0
+scale = Vector2(1, 0.520001)
+color = Color(0.184314, 0.286275, 0.396078, 1)
+
+[node name="lvl1" type="Button" parent="list"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 201.6
+offset_bottom = 224.0
+
+[node name="lvl2" type="Button" parent="list"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 16.0
+offset_right = 401.6
+offset_bottom = 224.0
+
+[node name="lvl3" type="Button" parent="list"]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 16.0
+offset_right = 601.6
+offset_bottom = 224.0
+
+[node name="lvl4" type="Button" parent="list"]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 16.0
+offset_right = 801.6
+offset_bottom = 224.0
+
+[node name="lvl5" type="Button" parent="list"]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 16.0
+offset_right = 1001.6
+offset_bottom = 224.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 120.0
+offset_right = 1088.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(0.184314, 0.286275, 0.396078, 1)
+theme_override_colors/font_outline_color = Color(0.843137, 0.811765, 0.690196, 1)
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 46
+text = "Choose your level"
+vertical_alignment = 1
+
+[node name="advice" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 440.0
+offset_right = 1088.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(0.184314, 0.286275, 0.396078, 1)
+theme_override_colors/font_outline_color = Color(0.843137, 0.811765, 0.690196, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 23
+text = "12345"
+horizontal_alignment = 1
+
+[node name="ButtonBack" type="Button" parent="."]
+offset_right = 104.0
+offset_bottom = 64.0
+pivot_offset = Vector2(82, 49)
+theme_override_colors/font_color = Color(0.184314, 0.286275, 0.396078, 1)
+theme_override_colors/font_outline_color = Color(0.843137, 0.811765, 0.690196, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 28
+action_mode = 0
+text = "BACK"
+flat = true
