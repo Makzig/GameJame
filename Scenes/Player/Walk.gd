@@ -50,8 +50,6 @@ func movement() -> void:
 
 
 func _on_entered(body) -> void:
-	print(body)
-	#print(body)
 	if body.is_in_group("PlayableObject"):
 		target = body
 

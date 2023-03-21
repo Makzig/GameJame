@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://8ad73abk7cs3"]
+[gd_scene load_steps=7 format=3 uid="uid://8ad73abk7cs3"]
 
 [ext_resource type="PackedScene" uid="uid://b0fwe6ahbluno" path="res://Scenes/Player/player.tscn" id="1_g1ess"]
 [ext_resource type="PackedScene" uid="uid://dt7redgrs7osn" path="res://Scenes/Player/Camera/player_camera.tscn" id="2_ahjl1"]
 [ext_resource type="Texture2D" uid="uid://dx5ge55k38upj" path="res://icon.svg" id="3_1384q"]
 [ext_resource type="PackedScene" uid="uid://pu0fdgrcjr2x" path="res://Scenes/Barriers/Statue/statue.tscn" id="4_omp8s"]
+[ext_resource type="PackedScene" uid="uid://dctg0vjtrm66a" path="res://Scenes/Portal/portal.tscn" id="5_ca4he"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qtrn8"]
 
@@ -36,3 +37,7 @@ position = Vector2(153, -44)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(102, 129)
 shape = SubResource("RectangleShape2D_qtrn8")
+
+[node name="Portal" parent="." instance=ExtResource("5_ca4he")]
+z_index = -1
+position = Vector2(118, 24)

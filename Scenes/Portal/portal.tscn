@@ -1,0 +1,123 @@
+[gd_scene load_steps=14 format=3 uid="uid://dctg0vjtrm66a"]
+
+[ext_resource type="Script" path="res://Scenes/Portal/Portal.gd" id="1_mkhb0"]
+[ext_resource type="Shader" path="res://portal.gdshader" id="2_jo261"]
+[ext_resource type="Texture2D" uid="uid://dx5ge55k38upj" path="res://icon.svg" id="3_5wppq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_72tuq"]
+radius = 17.1172
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ie1l2"]
+resource_local_to_scene = true
+shader = ExtResource("2_jo261")
+shader_parameter/color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_7yjbi"]
+resource_name = "Idle"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0, 0.15, -0.25, 0, 0.25, 0, 0.103225, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0, 0.15, -0.25, 0, 0.25, 0, 0.103225, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_ap2ej"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yqrea"]
+_data = {
+"Idle": SubResource("Animation_7yjbi"),
+"RESET": SubResource("Animation_ap2ej")
+}
+
+[sub_resource type="Gradient" id="Gradient_y5k26"]
+offsets = PackedFloat32Array(0.177778, 0.474074, 0.77037, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1, 0.93845, 0.93845, 0.93845, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dgg0c"]
+gradient = SubResource("Gradient_y5k26")
+
+[sub_resource type="Curve" id="Curve_6xr2m"]
+min_value = 1.0
+max_value = 5.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.457831, 4.81818), 0.0, 0.0, 0, 0, Vector2(0.933735, 1.8), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_vj2mc"]
+curve = SubResource("Curve_6xr2m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hv0gx"]
+emission_shape = 1
+emission_sphere_radius = 10.0
+particle_flag_align_y = true
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 25.0
+initial_velocity_max = 40.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_vj2mc")
+color_ramp = SubResource("GradientTexture1D_dgg0c")
+
+[node name="Portal" type="Area2D"]
+script = ExtResource("1_mkhb0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_72tuq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ie1l2")
+rotation = -0.785397
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_5wppq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+libraries = {
+"": SubResource("AnimationLibrary_yqrea")
+}
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 30
+process_material = SubResource("ParticleProcessMaterial_hv0gx")
