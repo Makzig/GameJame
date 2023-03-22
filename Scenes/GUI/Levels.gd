@@ -10,6 +10,8 @@ var save:SaveResource
 
 func _ready():
 	
+	$list/lvl1.grab_focus()
+	
 	for button in buttons:
 		$list.get_node(button).pressed.connect(_on_pressed)
 	

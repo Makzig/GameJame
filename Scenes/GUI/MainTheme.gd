@@ -2,6 +2,9 @@ extends Control
 
 
 func _ready():
+	
+	$ButtonPlay.grab_focus()
+	
 	$switchRect/switch.play_backwards("switch")
 	await get_tree().create_timer(0.5).timeout
 	$switchRect.visible = false
@@ -38,3 +41,7 @@ func change_scene(path):
 	tween.tween_property($switchRect, "color", Color(1,1,1,1), 0.5)
 	await tween.finished
 	get_tree().change_scene_to_file(path)
+
+
+func _on_button_settings_pressed():
+	$settings.visible = !$settings.visible
