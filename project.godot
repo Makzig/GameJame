@@ -21,7 +21,7 @@ EventBus="*res://Scripts/Global/EventBus.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/hurtbox_and_hitbox/plugin.cfg", "res://addons/state_machine/plugin.cfg")
+enabled=PackedStringArray("res://addons/hurtbox_and_hitbox/plugin.cfg", "res://addons/state_machine/plugin.cfg", "res://addons/save_and_load/plugin.cfg")
 
 [input]
 

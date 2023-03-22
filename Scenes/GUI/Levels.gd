@@ -4,6 +4,10 @@ var advices = [
 	"совет №1",
 	"совет №2",
 	"совет №3"]
+var save:SaveResource
+
+
+
 
 func _ready():
 	$advice.text = advices[randi_range(0,2)]

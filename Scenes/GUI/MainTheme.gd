@@ -15,8 +15,8 @@ func _on_button_play_pressed():
 func anim_grab(forward:bool = false) -> void:
 	var tween = create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
 	var origin_scale = Vector2.ONE
-	var need_scale = Vector2.ONE * 1.5
-	var time = 0.5
+	var need_scale = Vector2.ONE * 1.3
+	var time = 1
 	if !forward:
 		$ButtonPlay.scale = origin_scale
 		tween.tween_property($ButtonPlay, "scale", need_scale, time)
