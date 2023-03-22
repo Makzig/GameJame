@@ -11,12 +11,12 @@ func _ready() -> void:
 
 
 func _on_entered(body) -> void:
-	if body.is_in_gorup("Player") or body.is_in_gorup("Object"):
+	if body.is_in_group("Player") or body.is_in_group("Object"):
 		$Sprite2D.play("Pressed")
 		pressed.emit()
 
 func _on_exited(body) -> void:
-	if body.is_in_gorup("Player") or body.is_in_gorup("Object"):
+	if body.is_in_group("Player") or body.is_in_group("Object"):
 		$Sprite2D.play("Idle")
 		realeased.emit()
 		

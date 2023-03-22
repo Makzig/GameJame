@@ -17,6 +17,7 @@ func _ready() -> void:
 func _on_hitbox_entered(area) -> void:
 	if !area is HitBox2D:
 		return
+	emit_signal("hurt", area)
 	take_damage(area.damage)
 	
 

@@ -5,6 +5,11 @@
 [node name="PlayerCamera" type="Camera2D"]
 zoom = Vector2(5, 5)
 limit_smoothed = true
+position_smoothing_enabled = true
+drag_left_margin = 0.4
+drag_top_margin = 0.4
+drag_right_margin = 0.4
+drag_bottom_margin = 0.4
 script = ExtResource("1_i3qi6")
 
 [node name="Timer" type="Timer" parent="."]

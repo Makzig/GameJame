@@ -44,8 +44,16 @@ func movement() -> void:
 		last_input = input_vector
 		owner.last_input = last_input
 		player.get_node("DetectRay")
+		if !is_picked:
+			if player.anim_playback.get_current_node() != "Walk":
+				player.anim_playback.travel("Walk")
+			player.set_blend_position("Walk", input_vector)
 	else:
 		owner.velocity = owner.velocity.move_toward(Vector2.ZERO, delta_time * friction)
+		if !is_picked:
+			if player.anim_playback.get_current_node() != "Idle":
+				player.anim_playback.travel("Idle")
+			player.set_blend_position("Idle", last_input)
 	owner.move_and_slide()
 
 
@@ -53,7 +61,7 @@ func _on_entered(body) -> void:
 	if body.is_in_group("PlayableObject"):
 		target = body
 
-func _on_hurt(hitbox:HitBox2D) -> void:
+func _on_hurt(_hitbox:HitBox2D) -> void:
 	state_machine.change_to("Dead")
 
 func _on_exited(body) -> void:

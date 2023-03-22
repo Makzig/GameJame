@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=3 uid="uid://b0fwe6ahbluno"]
+[gd_scene load_steps=113 format=3 uid="uid://b0fwe6ahbluno"]
 
 [ext_resource type="Script" path="res://addons/state_machine/StateMachine.gd" id="1_h0dfx"]
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_pi762"]
@@ -672,8 +672,36 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_r58qs"]
+resource_name = "Dead"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"dead"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bkhuu"]
 _data = {
+"Dead": SubResource("Animation_r58qs"),
 "RESET": SubResource("Animation_en2vh"),
 "grab_walk_up": SubResource("Animation_m4h5o"),
 "idle_down": SubResource("Animation_g6b0o"),
@@ -743,6 +771,7 @@ states/Walk/position = Vector2(616, 61)
 [sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_2kb2c"]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 1
 script = ExtResource("1_pi762")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -770,6 +799,8 @@ sprite_frames = SubResource("SpriteFrames_mxsca")
 animation = &"Idle"
 
 [node name="HurtBox2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 16
 script = ExtResource("5_jxftf")
 max_health = 1.0
 
@@ -787,7 +818,7 @@ anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource("AnimationNodeStateMachinePlayback_gdjrl")
 parameters/Idle/blend_position = Vector2(-0.0192, 0.202128)
-parameters/Walk/blend_position = Vector2(0.08, 0.344978)
+parameters/Walk/blend_position = Vector2(-0.096, 0.484716)
 
 [node name="DetectRay" type="Area2D" parent="."]
 

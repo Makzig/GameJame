@@ -12,19 +12,22 @@ func _on_button_play_pressed():
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://Scenes/GUI/Levels.tscn")
 
-func anim_grab(v) -> void:
-	if v == 1:
-		var tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
-		$ButtonPlay.scale = Vector2.ONE 
-		tween.tween_property($ButtonPlay, "scale", Vector2.ONE * 1.1, 0.3)
-	else:
-		var tween = create_tween().set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_OUT)
-		$ButtonPlay.scale = Vector2(1.1,1.1) 
-		tween.tween_property($ButtonPlay, "scale", Vector2.ONE, 0.3)
+func anim_grab(forward:bool = false) -> void:
+	var tween = create_tween().set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	var origin_scale = Vector2.ONE
+	var need_scale = Vector2.ONE * 1.5
+	var time = 0.5
+	if !forward:
+		$ButtonPlay.scale = origin_scale
+		tween.tween_property($ButtonPlay, "scale", need_scale, time)
+	elif forward:
+		$ButtonPlay.scale = need_scale 
+		tween.parallel().tween_property($ButtonPlay, "scale", origin_scale,  time)
 
 func _on_button_play_mouse_entered():
-	anim_grab(1)
+	anim_grab()
+
 func _on_button_play_mouse_exited():
-	anim_grab(2)
+	anim_grab(true)
 
 

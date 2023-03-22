@@ -17,6 +17,8 @@ func _anim_change_scene(target:Player) -> void:
 	tween.parallel().tween_property(target, "scale", Vector2.ZERO, 3)
 	if scene_path != "":
 		await tween.finished
+		EventBus.change_scene.emit()
+		await EventBus.change_finished
 		get_tree().change_scene_to_file(scene_path)
 
 func _physics_process(delta):

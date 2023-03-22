@@ -143,6 +143,7 @@ text = "12345"
 horizontal_alignment = 1
 
 [node name="ButtonBack" type="Button" parent="."]
+layout_mode = 0
 offset_right = 104.0
 offset_bottom = 64.0
 pivot_offset = Vector2(82, 49)
