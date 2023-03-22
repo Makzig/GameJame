@@ -143,6 +143,7 @@ text = "settings"
 flat = true
 
 [node name="switchRect" type="ColorRect" parent="."]
+z_index = 999
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0

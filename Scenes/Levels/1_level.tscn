@@ -43,7 +43,7 @@ position = Vector2(417, 348)
 
 [node name="Portal" parent="." instance=ExtResource("4_n5hq4")]
 position = Vector2(190, 85)
-scene_path = "res://Scenes/Levels/Level2.tscn"
+scene_path = "res://Scenes/Levels/2_level.tscn"
 
 [node name="Money" parent="." instance=ExtResource("5_nksxk")]
 position = Vector2(244, 162)
