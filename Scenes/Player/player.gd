@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-var last_input:Vector2
+var last_input:Vector2i
 @onready var anim_tree:AnimationTree = $AnimationTree
 @onready var anim_playback:AnimationNodeStateMachinePlayback = anim_tree.get("parameters/playback")
 
