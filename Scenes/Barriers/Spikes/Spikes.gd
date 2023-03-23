@@ -22,6 +22,7 @@ func _ready() -> void:
 	if state == SpikeState.TIME_EMIT:
 		if time_offset > 0:
 			await get_tree().create_timer(time_offset).timeout
+		$Timer.start()
 		$Timer.connect("timeout", _on_timeout)
 
 
@@ -52,6 +53,6 @@ func attack() -> void:
 	$AnimationPlayer.play("Attack")
 
 func idle() -> void:
-	$AnimationPlayer.play("await")
-	await $AnimationPlayer.animation_finished
+	#$AnimationPlayer.play("await")
+	#await $AnimationPlayer.animation_finished
 	$AnimationPlayer.play("Idle")

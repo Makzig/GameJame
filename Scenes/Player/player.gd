@@ -8,7 +8,6 @@ var last_input:Vector2i
 
 
 
-
 func set_blend_position(blend_node:String, blend_position:Vector2) -> void:
 	anim_tree.set("parameters/%s/blend_position"  % blend_node, blend_position ) 
 

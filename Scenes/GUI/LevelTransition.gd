@@ -16,6 +16,7 @@ func color_transition(forward:bool = false) -> void:
 
 func _ready() -> void:
 	EventBus.change_scene.connect(_on_change_scene)
+	visible = true
 	if to_ready:
 		await get_tree().create_timer(0.5).timeout
 		color_transition(true)

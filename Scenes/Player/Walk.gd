@@ -43,7 +43,7 @@ func movement() -> void:
 		owner.velocity = owner.velocity.limit_length(input_vector.length() * delta_time * max_speed)
 		last_input = input_vector
 		owner.last_input = last_input
-		player.get_node("DetectRay")
+		player.get_node("DetectRay/CollisionShape2D").rotation = input_vector.angle() - PI/2
 		if !is_picked:
 			if player.anim_playback.get_current_node() != "Walk":
 				player.anim_playback.travel("Walk")

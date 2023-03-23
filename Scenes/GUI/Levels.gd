@@ -22,17 +22,14 @@ func _ready():
 
 func _on_button_back_pressed():
 	change_scene("res://Scenes/GUI/MainTheme.tscn")
+
 func _on_pressed() -> void:
-	if $list/lvl1.button_pressed:
-		change_scene("res://Scenes/Levels/1_level.tscn")
-	if $list/lvl2.button_pressed:
-		change_scene("res://Scenes/Levels/2_level.tscn")
-	if $list/lvl3.button_pressed:
-		pass
-	if $list/lvl4.button_pressed:
-		pass
-	if $list/lvl5.button_pressed:
-		pass
+	for button in $list.get_children().size():
+		if $list.get_child(button).button_pressed:
+			change_scene("res://Scenes/Levels/%s_level.tscn" % (button + 1))
+
+
+
 
 func change_scene(path):
 	var tween = create_tween()
