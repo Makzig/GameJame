@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://jf7wic7qiujx"]
+[gd_scene load_steps=8 format=3 uid="uid://jf7wic7qiujx"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/Level_3.gd" id="1_8yybq"]
 [ext_resource type="TileSet" uid="uid://cij25lu3oot7" path="res://1_level.tres" id="2_1igc2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ck2r5na1w5jir" path="res://Scenes/Barriers/FloorButton/floor_button.tscn" id="4_rg750"]
 [ext_resource type="PackedScene" uid="uid://dt7redgrs7osn" path="res://Scenes/Player/Camera/player_camera.tscn" id="5_imgio"]
 [ext_resource type="PackedScene" uid="uid://b0fwe6ahbluno" path="res://Scenes/Player/player.tscn" id="6_hjdi5"]
+[ext_resource type="PackedScene" uid="uid://caff6ihbkrbbv" path="res://Scenes/GUI/color_transition.tscn" id="7_pr3o7"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_8yybq")
@@ -30,74 +31,88 @@ layer_1/tile_data = PackedInt32Array(2490368, 655360, 2, 2490369, 655360, 2, 249
 [node name="HitBox2D" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(80, 912)
 state = 1
+time_to_attack = 1.5
 
 [node name="HitBox2D2" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(56, 886)
 state = 1
+time_to_attack = 1.5
 
 [node name="HitBox2D3" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(30, 860)
 state = 1
+time_to_attack = 1.5
 
 [node name="HitBox2D4" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(12, 913)
 state = 1
 time_offset = 1.0
+time_to_attack = 1.5
 
 [node name="HitBox2D5" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(101, 858)
 state = 1
 time_offset = 1.0
+time_to_attack = 1.5
 
 [node name="HitBox2D6" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(120, 882)
 state = 1
 time_offset = 1.0
+time_to_attack = 1.5
 
 [node name="HitBox2D7" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(143, 907)
 state = 1
 time_offset = 1.0
+time_to_attack = 1.5
 
 [node name="HitBox2D8" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(172, 854)
 state = 1
+time_to_attack = 1.5
 
 [node name="HitBox2D9" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(196, 881)
 state = 1
+time_to_attack = 1.5
 
 [node name="HitBox2D10" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(196, 909)
 state = 1
+time_to_attack = 1.5
 
 [node name="HitBox2D11" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(544, 904)
 state = 1
-time_offset = 1.0
+time_offset = 1.5
+time_to_attack = 2.5
 
 [node name="HitBox2D12" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(560, 888)
 state = 1
-time_offset = 1.0
+time_offset = 1.5
+time_to_attack = 2.5
 
 [node name="HitBox2D13" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(584, 904)
 state = 1
+time_to_attack = 2.5
 
 [node name="HitBox2D14" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(576, 872)
 state = 1
+time_to_attack = 2.5
 
 [node name="HitBox2D15" parent="Spikes" instance=ExtResource("3_1kcgy")]
 position = Vector2(536, 864)
 state = 1
-time_offset = 1.0
+time_to_attack = 2.5
 
 [node name="Buttons" type="Node2D" parent="."]
 
 [node name="FloorButton" parent="Buttons" instance=ExtResource("4_rg750")]
-position = Vector2(8, 888)
+position = Vector2(16, 888)
 
 [node name="FloorButton2" parent="Buttons" instance=ExtResource("4_rg750")]
 position = Vector2(624, 888)
@@ -121,3 +136,7 @@ position = Vector2(304, 336)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
 remote_path = NodePath("../../PlayerCamera")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" parent="CanvasLayer" instance=ExtResource("7_pr3o7")]

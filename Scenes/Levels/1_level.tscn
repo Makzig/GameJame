@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://waan8476xy2s"]
+[gd_scene load_steps=7 format=3 uid="uid://waan8476xy2s"]
 
 [ext_resource type="TileSet" uid="uid://cij25lu3oot7" path="res://1_level.tres" id="1_1m2i1"]
 [ext_resource type="PackedScene" uid="uid://b0fwe6ahbluno" path="res://Scenes/Player/player.tscn" id="2_1ilo7"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dctg0vjtrm66a" path="res://Scenes/Portal/portal.tscn" id="4_n5hq4"]
 [ext_resource type="PackedScene" uid="uid://5njy1chf8p7y" path="res://Scenes/Money/money.tscn" id="5_nksxk"]
 [ext_resource type="PackedScene" uid="uid://caff6ihbkrbbv" path="res://Scenes/GUI/color_transition.tscn" id="6_elhxt"]
-[ext_resource type="AudioStream" uid="uid://dmdhfjfo6fksx" path="res://Assets/Music/friendzoned-intermezzo.mp3" id="7_qyhd2"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -51,8 +50,3 @@ position = Vector2(244, 162)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" parent="CanvasLayer" instance=ExtResource("6_elhxt")]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_qyhd2")
-volume_db = -15.0
-autoplay = true

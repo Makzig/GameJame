@@ -7,7 +7,7 @@ enum CameraState{IDLE, SHAKE, CUTSCENE}
 
 var state:CameraState = CameraState.IDLE
 
-var force_shake:float = 750
+var force_shake:float = 450
 
 
 
@@ -35,6 +35,9 @@ func get_random_vector() -> Vector2:
 		randf_range(-1, 1)
 	)
 
+
+func set_state(_state:CameraState) -> void:
+	state = _state
 
 func _on_timeout() -> void:
 	state = CameraState.IDLE

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dya21dvrobtvt"]
+[gd_scene load_steps=9 format=3 uid="uid://dya21dvrobtvt"]
 
 [ext_resource type="TileSet" uid="uid://cij25lu3oot7" path="res://1_level.tres" id="1_7dvyf"]
 [ext_resource type="PackedScene" uid="uid://caff6ihbkrbbv" path="res://Scenes/GUI/color_transition.tscn" id="1_iu78m"]
@@ -6,10 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://dt7redgrs7osn" path="res://Scenes/Player/Camera/player_camera.tscn" id="3_51ptu"]
 [ext_resource type="PackedScene" uid="uid://dctg0vjtrm66a" path="res://Scenes/Portal/portal.tscn" id="4_s2eyp"]
 [ext_resource type="PackedScene" uid="uid://do1d5m6aj5r5o" path="res://Scenes/Barriers/Spikes/Spike.tscn" id="5_swlr8"]
-[ext_resource type="Script" path="res://Scenes/Barriers/FloorButton/FloorButton.gd" id="6_n2nkb"]
+[ext_resource type="PackedScene" uid="uid://ck2r5na1w5jir" path="res://Scenes/Barriers/FloorButton/floor_button.tscn" id="8_2c2ps"]
 [ext_resource type="PackedScene" uid="uid://bbtllor482roc" path="res://Scenes/Barriers/Statue/statue.tscn" id="8_iio5x"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v06l1"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -44,335 +42,265 @@ position = Vector2(515, 658)
 
 [node name="Portal" parent="." instance=ExtResource("4_s2eyp")]
 position = Vector2(247, 84)
+scene_path = "res://Scenes/Levels/3_level.tscn"
 
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Spike" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(136, 232)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike2" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(112, 232)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike3" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(96, 232)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike4" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(80, 232)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike5" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(64, 232)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike6" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(136, 256)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike7" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(112, 256)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike8" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(96, 256)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike9" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(80, 256)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike10" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(64, 256)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike11" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(136, 280)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike12" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(112, 280)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike13" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(96, 280)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike14" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(80, 280)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike15" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(64, 280)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike16" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(136, 304)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike17" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(112, 304)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike18" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(96, 304)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike19" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(80, 304)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike20" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(64, 304)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike21" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(136, 336)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike22" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(112, 336)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike23" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(96, 336)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike24" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(80, 336)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike25" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(64, 336)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike26" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(136, 368)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike27" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(112, 368)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike28" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(96, 368)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike29" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(80, 368)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike30" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(64, 368)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike31" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(136, 400)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike32" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(112, 400)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike33" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(96, 400)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike34" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(80, 400)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike35" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(64, 400)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike36" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(136, 432)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike41" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(408, 232)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike42" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(408, 256)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike43" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(408, 280)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike44" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(408, 304)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike45" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(408, 336)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike46" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(408, 368)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike47" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(408, 400)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike48" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(408, 432)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike49" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(432, 232)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike50" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(432, 256)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike51" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(432, 280)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike52" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(432, 304)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike53" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(432, 336)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike54" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(432, 368)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike55" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(432, 400)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike56" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(432, 432)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike57" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(448, 232)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike58" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(448, 256)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike59" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(448, 280)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike60" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(448, 304)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike61" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(448, 336)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike62" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(448, 368)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike63" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(448, 400)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike64" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(448, 432)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike37" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(112, 432)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike38" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(96, 432)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike39" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(80, 432)
 state = 0
-floor_button = NodePath("../../FloorButton")
 
 [node name="Spike40" parent="Node2D" instance=ExtResource("5_swlr8")]
 position = Vector2(64, 432)
 state = 0
-floor_button = NodePath("../../FloorButton")
-
-[node name="FloorButton" type="Area2D" parent="."]
-position = Vector2(408, 560)
-script = ExtResource("6_n2nkb")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FloorButton"]
-shape = SubResource("RectangleShape2D_v06l1")
 
 [node name="PlayerCamera" parent="." instance=ExtResource("3_51ptu")]
 position = Vector2(248, 560)
@@ -381,3 +309,6 @@ right_down_limit = NodePath("../Right")
 
 [node name="statue" parent="." groups=["Object"] instance=ExtResource("8_iio5x")]
 position = Vector2(106, 554)
+
+[node name="FloorButton" parent="." instance=ExtResource("8_2c2ps")]
+position = Vector2(423, 559)

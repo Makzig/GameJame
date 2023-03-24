@@ -4,6 +4,7 @@ enum SpikeState{BUTTON_EMIT, TIME_EMIT, ENTER_EMIT}
 @export var state:SpikeState = SpikeState.ENTER_EMIT
 @export  var floor_button = NodePath()
 @export var time_offset:float = 0
+@export var time_to_attack:float = 0
 
 @onready var button:FloorButton = get_node(floor_button) if floor_button != null else null
 @onready var shape:CollisionShape2D = $CollisionShape2D
@@ -22,7 +23,10 @@ func _ready() -> void:
 	if state == SpikeState.TIME_EMIT:
 		if time_offset > 0:
 			await get_tree().create_timer(time_offset).timeout
-		$Timer.start()
+		if time_to_attack > 0:
+			$Timer.start(time_to_attack)
+		else:
+			$Timer.stop()
 		$Timer.connect("timeout", _on_timeout)
 
 

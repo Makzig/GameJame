@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4eogkcjngsd1"]
+
+[ext_resource type="AudioStream" uid="uid://dmdhfjfo6fksx" path="res://Assets/Music/friendzoned-intermezzo.mp3" id="1_agxx5"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_agxx5")
+volume_db = -15.0
+autoplay = true

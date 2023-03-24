@@ -1,7 +1,7 @@
 extends Node2D
 
 
-var buttons:Array 
+var buttons:Array  = [null, null]
 var portal:PackedScene = preload("res://Scenes/Portal/portal.tscn")
 
 func _ready() -> void:
@@ -10,16 +10,21 @@ func _ready() -> void:
 
 func add_button() -> void:
 	for i in $Buttons.get_children().size():
-		if $Buttons.get_child(i).pressed:
-			buttons[i] = $Node.get_child(i)
+		if $Buttons.get_child(i)._is_pressed == true:
+			buttons[i] = $Buttons.get_child(i)
+
 
 
 func _on_pressed() -> void:
 	add_button()
-#	if buttons.any()
+	add_portal()
 
 
 func add_portal() -> void:
+	if buttons.has(null):
+		return
 	var por = portal.instantiate()
 	add_child(por)
 	por.position = $Marker2D.position
+
+

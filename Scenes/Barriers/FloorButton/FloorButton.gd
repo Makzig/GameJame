@@ -15,15 +15,17 @@ func _ready() -> void:
 func _on_entered(body) -> void:
 	if body.is_in_group("Player") or body.is_in_group("Object"):
 		if !_is_pressed:
-		#$Sprite2D.play("Pressed")
-			pressed.emit()
 			_is_pressed = true
+			$AnimationPlayer.play("Pressed")
+			pressed.emit()
+			
 
 func _on_exited(body) -> void:
 	if body.is_in_group("Player") or body.is_in_group("Object"):
 		if _is_pressed:
-		#$Sprite2D.play("Idle")
-			realeased.emit()
 			_is_pressed = false
+			$AnimationPlayer.play("Idle")
+			realeased.emit()
+			
 		
 
